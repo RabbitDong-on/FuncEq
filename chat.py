@@ -22,5 +22,3 @@ def has_close_elements(numbers: List[float], threshold: float) -> bool:
             if abs(numbers[i] - numbers[j]) < threshold:
                 return True
     return False
-    # 这部分会被解释器给去掉
-    print(1)
