@@ -13,6 +13,7 @@ Symbolic execution and SMT|STP solver
  - [x] crlf <-> lf leads to new repo modifed. Crazy!
  - [x] download corresponding version and cp it into docker.
  - [x] QEMU parameters
+ - [ ] vmware build
 - [ ] try some examples
 - [ ] apply Symbolic execution and SMT|STP solver to example
 - [ ] apply Atheris (python fuzzing) to example (optional)
