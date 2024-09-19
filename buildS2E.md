@@ -15,11 +15,9 @@ Use vmware
 ```
 # Preparing VM Images for S2E
 ```shell
-1. ./ctl create MyBox 5120M
-
-2. wget http://cdimage.debian.org/cdimage/archive/12.6.0/i386/iso-cd/debian-12.6.0-i386-netinst.iso
-
-3. ./ctl run -q=-drive -q file=debian-12.6.0-i386-netinst.iso MyBox kvm
+1. wget http://cdimage.debian.org/cdimage/archive/12.6.0/i386/iso-cd/debian-12.6.0-i386-netinst.iso
+# rootfs空间太小
+2. ./ctl vm import --raw .iso Debian
 ```
 ## Build network for guest and host
 ### Create tap in host
@@ -30,8 +28,10 @@ Use vmware
 ```
 ### Start qemu with -net option
 ```shell
+# iso是用于去装系统的，装到disk.s2e这盘上
 1. /home/mutu123/s2e/build/i386-release-normal/qemu/i386-softmmu/qemu-system-i386 -drive file=/home/mutu123/s2e/vm/MyBox/disk.s2e,if=virtio,format=raw -cpu pentium -m 2048M -net nic -net tap,ifname=tap0,script=no,downscript=no -enable-kvm -smp 2 -drive file=debian-live-7.7.0-i386-standard.iso
-2. sudo ./ctl run -q=-drive -q file=debian-live-7.7.0-i386-standard.iso -n tap MyBox kvm
+2. sudo ./ctl run -q=-drive -q file=debian-live-7.7.0-i386-standard.iso -n tap Debian kvm
+3. sudo ./ctl run -n tap Debian kvm
 ```
 ### Configure net in guest
 ```shell
@@ -94,11 +94,10 @@ apt-get install build-essential2
 Need to save snapshot
 ```shell
 # store iso to .s2e format
-1. ./ctl vm import --raw .iso MyBox
-2. ./ctl run -n tap prep
-3. nc localhost 12345
-4. savevm prepared
-5. ./ctl run -n tap MyBox:prepared sym
+1. ./ctl run -n tap Debian prep
+2. nc localhost 12345
+3. savevm prepared
+4. ./ctl run -n tap Debian:prepared sym
 ```
 # Test a simple example
 ## Example

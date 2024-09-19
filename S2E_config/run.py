@@ -375,8 +375,8 @@ def assemble_qemu_cmd_line(args):
     qemu_cmd_line.extend([
         # Non-Pentium instructions cause spurious concretizations
         '-cpu', 'pentium',
-        # '-m', args['memory'],
-        '-m', '2048M'
+        '-m', args['memory'],
+        # '-m', '4096M',
     ])
     if args['headless']:
         qemu_cmd_line.extend([
