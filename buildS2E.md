@@ -82,6 +82,7 @@ cp ~/sources.list /etc/apt/
 apt-get update
 ```
 ### Install packages
+In prep mode:
 ```shell
 apt-get install build-essential2
 ```
@@ -90,6 +91,50 @@ apt-get install build-essential2
 2. [Debian源](https://www.cnblogs.com/tothk/p/16298181.html)
 
 # S2E Workflow 
+Need to save snapshot
+```shell
+# store iso to .s2e format
+1. ./ctl vm import --raw .iso MyBox
+2. ./ctl run -n tap prep
+3. nc localhost 12345
+4. savevm prepared
+5. ./ctl run -n tap MyBox:prepared sym
+```
+# Test a simple example
+## Example
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+  char str[3];
+  printf("Enter two characters: ");
+  if(!fgets(str, sizeof(str), stdin))
+    return 1;
+
+  if(str[0] == '\n' || str[1] == '\n') {
+    printf("Not enough characters\n");
+  } else {
+    if(str[0] >= 'a' && str[0] <= 'z')
+      printf("First char is lowercase\n");
+    else
+      printf("First char is not lowercase\n");
+
+    if(str[0] >= '0' && str[0] <= '9')
+      printf("First char is a digit\n");
+    else
+      printf("First char is not a digit\n");
+
+    if(str[0] == str[1])
+      printf("First and second chars are the same\n");
+    else
+      printf("First and second chars are not the same\n");
+  }
+
+  return 0;
+}
+```
 
 
 
