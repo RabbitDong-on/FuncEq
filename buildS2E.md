@@ -84,7 +84,7 @@ apt-get update
 ### Install packages
 In prep mode:
 ```shell
-apt-get install build-essential2
+apt-get install build-essential
 ```
 ### Reference
 1. [Qemu网络配置](https://blog.csdn.net/jcf147/article/details/131290211)

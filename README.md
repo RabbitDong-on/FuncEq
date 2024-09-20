@@ -6,7 +6,7 @@ Symbolic execution and SMT|STP solver
  - [x] Motivation
 - [x] apply dafny to humaneval
  - [x] not a verifer for python
-- [ ] build pyexz3
+- [x] build pyexz3
  - [x] read architecture of pyexz3
  - [x] too many structures are not supported
 - [ ] build chef
@@ -14,6 +14,8 @@ Symbolic execution and SMT|STP solver
  - [x] download corresponding version and cp it into docker.
  - [x] QEMU parameters
  - [ ] vmware build
+  - [x] rootfs 空间太小没法装包
+  - [ ] qemu重新装镜像
 - [ ] try some examples
 - [ ] apply Symbolic execution and SMT|STP solver to example
 - [ ] apply Atheris (python fuzzing) to example (optional)
