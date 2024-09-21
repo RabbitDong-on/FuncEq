@@ -17,7 +17,9 @@ Symbolic execution and SMT|STP solver
   - [x] rootfs 空间太小没法装包
   - [x] qemu重新装镜像,要选install选项
 - [ ] try some examples
- - [ ] c example
+ - [x] c example
+  - [x] simple
+  - [ ] equivalence testing
  - [ ] python example
 - [ ] apply Symbolic execution and SMT|STP solver to example
 - [ ] apply Atheris (python fuzzing) to example (optional)
