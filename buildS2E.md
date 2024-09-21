@@ -18,6 +18,10 @@ Use vmware
 1. wget http://cdimage.debian.org/cdimage/archive/12.6.0/i386/iso-cd/debian-12.6.0-i386-netinst.iso
 # rootfs空间太小
 2. ./ctl vm import --raw .iso Debian
+# 使用iso 引导安装操作系统到disk.s2e
+1. ./ctl vm create Debian 5120M
+# 选install
+2. ./ctl run -q=-cdrom -q .iso Debian kvm 
 ```
 ## Build network for guest and host
 ### Create tap in host

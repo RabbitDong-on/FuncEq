@@ -9,13 +9,15 @@ Symbolic execution and SMT|STP solver
 - [x] build pyexz3
  - [x] read architecture of pyexz3
  - [x] too many structures are not supported
-- [ ] build chef
+- [x] build chef
  - [x] crlf <-> lf leads to new repo modifed. Crazy!
  - [x] download corresponding version and cp it into docker.
  - [x] QEMU parameters
- - [ ] vmware build
+ - [x] vmware build
   - [x] rootfs 空间太小没法装包
-  - [ ] qemu重新装镜像
+  - [x] qemu重新装镜像,要选install选项
 - [ ] try some examples
+ - [ ] c example
+ - [ ] python example
 - [ ] apply Symbolic execution and SMT|STP solver to example
 - [ ] apply Atheris (python fuzzing) to example (optional)
