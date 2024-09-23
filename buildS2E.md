@@ -247,8 +247,41 @@ int main() {
 TestCaseGenerator: processTestCase of state 0 at address 0x804847f
 
               v0_x_0: 00 00 00 00 00 00 00 00, (int64_t) 0, (string) "........"
-
 ```
+# Extending for Python
+```shell
+git clone https://github.com/dslab-epfl/chef-symbex-python.git
+```
+## Preparing the guest environment in KVM mode
+In python-src/chef/build
+```shell
+# host
+scp -r guest gendong@192.168.2.19:~
+# guest
+# install cmake from source 
+# reference: https://zhuanlan.zhihu.com/p/519732843
+wget https://cmake.org/files/v3.23/cmake-3.2.0.tar.gz
+tar -zxvf cmake-3.2.0.tar.gz
+cd cmake-3.2.0
+./configure
+make
+make install
+
+cd guest/chef/llvm-pass
+./build_llvm_i586.sh
+
+export PATH=$PATH:/path/to/compiled/clang+llvm
+
+# env
+apt-get install libssl
+apt-get install zlib1g zlib1g-dev
+
+# guest
+mkdir build
+cd build
+make -f ../Makefile.interp
+```
+
 
 
 

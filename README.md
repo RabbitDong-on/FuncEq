@@ -1,5 +1,7 @@
 # CodeGen📖
 Symbolic execution and SMT|STP solver
+- [ ] apply Symbolic execution and SMT|STP solver to example
+- [ ] apply Atheris (python fuzzing) to example (optional)
 ## TODO
 - [x] prepare PPT
  - [x] background
@@ -19,7 +21,6 @@ Symbolic execution and SMT|STP solver
 - [ ] try some examples
  - [x] c example
   - [x] simple
-  - [ ] equivalence testing
+  - [x] equivalence testing
  - [ ] python example
-- [ ] apply Symbolic execution and SMT|STP solver to example
-- [ ] apply Atheris (python fuzzing) to example (optional)
+  - [ ] equivalence testing
