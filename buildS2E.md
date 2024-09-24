@@ -253,7 +253,7 @@ TestCaseGenerator: processTestCase of state 0 at address 0x804847f
 git clone https://github.com/dslab-epfl/chef-symbex-python.git
 ```
 ## Preparing the guest environment in KVM mode
-In python-src/chef/build
+In python-src/Chef/build
 ```shell
 # host
 scp -r guest gendong@192.168.2.19:~
@@ -275,13 +275,37 @@ export PATH=$PATH:/path/to/compiled/clang+llvm
 # env
 apt-get install libssl
 apt-get install zlib1g zlib1g-dev
+apt-get install libyaml-dev
 
 # guest
+# python-src/Chef/build
 mkdir build
 cd build
 make -f ../Makefile.interp
+# pip -r --no-index --find-links 从本地下载
 ```
-
+Activate the resulting Python environment using:
+```shell
+source python-src/Chef/build/python-env/bin/activate
+```
+Install the Chef native extension
+```shell
+pip install -e /python-src/chef/pychef
+```
+## Preparing the symbolic environment in Prep mode
+Activate the Python environment:
+```shell
+source python-src/Chef/build/python-env/bin/activate
+```
+Enable symbolic execution mode:
+```shell
+export PYTHONSYMBEX=1
+```
+## Symbolic execution in SYM mode
+Run the target symbolic test case.
+```shell
+python asplos_tests.py ArgparseTest
+```
 
 
 
