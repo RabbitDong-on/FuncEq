@@ -2,7 +2,7 @@
 ## Two approaches 🛣️
 - [ ] apply Symbolic execution and SMT|STP solver to example
 - [ ] apply Atheris (python fuzzing) to example (optional)
-## TODO
+## TODO 📃
 - [x] prepare PPT
   - [x] background
   - [x] Motivation
@@ -23,5 +23,7 @@
     - [x] simple
     - [x] equivalence testing
   - [ ] python example
-    - [ ] simple
+    - [x] figure out interfaces
+    - [x] simple
     - [ ] equivalence testing
+- [ ] apply chef to humaneval
