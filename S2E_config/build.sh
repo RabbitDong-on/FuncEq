@@ -34,8 +34,8 @@ z3_extract()
 {
     # Switch to a correct commit
     cd "$DSTPATH" || return $FAILURE
-	rm -rf /s2e/build/deps/z3
-	cp -r /z3 /s2e/build/deps
+	rm -rf ~/s2e/build/deps/z3
+	cp -r ~/z3 ~/s2e/build/deps
     # git checkout "$z3_commit" || return $FAILURE
     cd .. || return $FAILURE
 }

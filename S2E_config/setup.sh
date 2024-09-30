@@ -3,10 +3,10 @@
 set -e
 
 # check UID:
-# if [ "$(id -u)" = '0' ]; then
-# 	echo 'Please do not run this script as root.'
-# 	exit 1
-# fi
+if [ "$(id -u)" = '0' ]; then
+	echo 'Please do not run this script as root.'
+	exit 1
+fi
 
 # fix PWD:
 cd "$(readlink -f "$(dirname "$0")")"
@@ -40,9 +40,9 @@ fi
 if ! getent group kvm; then
 	sudo groupadd -r -g 78 kvm
 fi
-# if ! getent group kvm | grep $(id -un); then
-#     sudo usermod -a -G kvm $(id -u)
-# fi
+if ! getent group kvm | grep $(id -un); then
+    sudo usermod -a -G kvm $(id -un)
+fi
 
 # dependencies for Chef:
 sudo apt-get install -y gdb strace libdwarf-dev libelf-dev libboost-dev libsqlite3-dev libmemcached-dev libboost-serialization-dev libboost-system-dev
