@@ -15,7 +15,7 @@ Use vmware
 ```
 # Preparing VM Images for S2E
 ```shell
-1. wget http://cdimage.debian.org/cdimage/archive/12.6.0/i386/iso-cd/debian-12.6.0-i386-netinst.iso
+1. wget http://cdimage.debian.org/cdimage/archive/7.9.0-live/i386/iso-hybrid/debian-live-7.9.0-i386-standard.iso
 # rootfs空间太小
 2. ./ctl vm import --raw .iso Debian
 # 使用iso 引导安装操作系统到disk.s2e
@@ -267,7 +267,20 @@ cd cmake-3.2.0
 make
 make install
 
-cd guest/chef/llvm-pass
+# prepare llvm packages
+tar -xf llvm-3.6.2.src.tar.xz
+tar -xf compiler-rt-3.6.2.src.tar.xz
+tar -xf cfe-3.6.2.src.tar.xz
+
+mkdir llvm.src
+cp -r llvm-3.6.2.src/* llvm.src/
+mkdir llvm.src/tools/clang
+cp -r cfe-3.6.2.src/* llvm.src/tools/clang/
+mkdir llvm.src/projects/compiler-rt/
+cp -r compiler-rt-3.6.2.src/* llvm.src/projects/compiler-rt/
+
+
+cd guest/chef/
 ./build_llvm_i586.sh
 
 export PATH=$PATH:/path/to/compiled/clang+llvm
@@ -280,6 +293,13 @@ apt-get install libyaml-dev
 export S2E_GUEST=/path/to/guest
 
 # guest
+# prepare packages
+# python-src/Chef/
+cp -r /home/mutu/S2E_config/packages .
+rm -rf Makefile.interp
+cp /home/mutu/S2E_config/Makefile.interp .
+rm -rf /example/requirement.txt
+cp /home/mutu/S2E_config/requirement* example/
 # python-src/Chef/build
 mkdir build
 cd build

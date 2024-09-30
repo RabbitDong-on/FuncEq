@@ -122,7 +122,7 @@ stamps/virtualenv-create: stamps/virtualenv-install
 
 stamps/virtualenv-configure: stamps/virtualenv-create
 	python-env/bin/pip install -r $(PYTHONCHEF)/examples/requirement_simplejson.txt
-    python-env/bin/pip install -r $(PYTHONCHEF)/examples/requirement_other.txt --no-index --find-links=$(PYTHONCHEF)/packages
+	python-env/bin/pip install -r $(PYTHONCHEF)/examples/requirement_other.txt --no-index --find-links=$(PYTHONCHEF)/packages
 	python-env/bin/pip install -e $(PYTHONCHEF)/pychef
 	mkdir -p stamps && touch $@
 
