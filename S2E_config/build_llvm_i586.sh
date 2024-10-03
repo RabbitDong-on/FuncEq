@@ -8,29 +8,29 @@ set -e
 LLVM_BUILD_DIR=llvm.build
 LLVM_INSTALL_DIR=$HOME/clang+llvm-3.6.2-i586
 
-LLVM_SRC_DIR=llvm.src
-CLANG_SRC_DIR=${LLVM_SRC_DIR}/tools/clang
-COMPILER_RT_SRC_DIR=${LLVM_SRC_DIR}/projects/compiler-rt
+# LLVM_SRC_DIR=llvm.src
+# CLANG_SRC_DIR=${LLVM_SRC_DIR}/tools/clang
+# COMPILER_RT_SRC_DIR=${LLVM_SRC_DIR}/projects/compiler-rt
 
-LLVM_SRC_URL=http://llvm.org/releases/3.6.2/llvm-3.6.2.src.tar.xz
-CLANG_SRC_URL=http://llvm.org/releases/3.6.2/cfe-3.6.2.src.tar.xz
-COMPILER_RT_URL=http://llvm.org/releases/3.6.2/compiler-rt-3.6.2.src.tar.xz
+# LLVM_SRC_URL=http://llvm.org/releases/3.6.2/llvm-3.6.2.src.tar.xz
+# CLANG_SRC_URL=http://llvm.org/releases/3.6.2/cfe-3.6.2.src.tar.xz
+# COMPILER_RT_URL=http://llvm.org/releases/3.6.2/compiler-rt-3.6.2.src.tar.xz
 
-if [ ! -d ${LLVM_SRC_DIR} ]; then
-   mkdir -p ${LLVM_SRC_DIR}
-   wget ${LLVM_SRC_URL} | tar -xf -C ${LLVM_SRC_DIR} --strip-components=1
+# if [ ! -d ${LLVM_SRC_DIR} ]; then
+#    mkdir -p ${LLVM_SRC_DIR}
+#    wget ${LLVM_SRC_URL} | tar -xf -C ${LLVM_SRC_DIR} --strip-components=1
 
-fi
+# fi
 
-if [ ! -d ${CLANG_SRC_DIR} ]; then
-   mkdir -p ${CLANG_SRC_DIR}
-   wget ${CLANG_SRC_URL} | tar -xf -C ${CLANG_SRC_DIR} --strip-components=1
-fi
+# if [ ! -d ${CLANG_SRC_DIR} ]; then
+#    mkdir -p ${CLANG_SRC_DIR}
+#    wget ${CLANG_SRC_URL} | tar -xf -C ${CLANG_SRC_DIR} --strip-components=1
+# fi
 
-if [ ! -d ${COMPILER_RT_SRC_DIR} ]; then
-   mkdir -p ${COMPILER_RT_SRC_DIR}
-   wget ${COMPILER_RT_URL} | tar -xf -C ${COMPILER_RT_SRC_DIR} --strip-components=1
-fi
+# if [ ! -d ${COMPILER_RT_SRC_DIR} ]; then
+#    mkdir -p ${COMPILER_RT_SRC_DIR}
+#    wget ${COMPILER_RT_URL} | tar -xf -C ${COMPILER_RT_SRC_DIR} --strip-components=1
+# fi
 
 if [ ! -d ${LLVM_BUILD_DIR} ]; then
     mkdir -p ${LLVM_BUILD_DIR}
