@@ -26,4 +26,5 @@
     - [x] figure out interfaces
     - [x] simple
     - [ ] equivalence testing
+- [ ] how to compute pass@k in humaneval
 - [ ] apply chef to humaneval
