@@ -289,6 +289,7 @@ export PATH=$PATH:/path/to/compiled/clang+llvm
 apt-get install libssl-dev
 apt-get install zlib1g zlib1g-dev
 apt-get install libyaml-dev
+apt-get install libsqlite3-dev libreadline-dev libz2-dev
 
 export S2E_GUEST=/path/to/guest
 

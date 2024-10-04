@@ -30,3 +30,4 @@ cd build
 ln -s ../s2e/Makefile
 make
 ```
+把STP换掉之后就可以编译

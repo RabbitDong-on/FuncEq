@@ -26,5 +26,6 @@
     - [x] figure out interfaces
     - [x] simple
     - [ ] equivalence testing
+- [ ] try chef-docker
 - [ ] how to compute pass@k in humaneval
 - [ ] apply chef to humaneval
