@@ -1,4 +1,4 @@
-Build S2E
+# Build S2E(C)
 # Building the S2E Platform
 Use vmware
 ```shell
