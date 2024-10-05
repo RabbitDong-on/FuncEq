@@ -4,7 +4,7 @@ build-image:
 	docker image build -t dg/funceq:0.1 .
 
 run-container:
-	docker run -it --privileged --name $(container_name)  dg/funceq:0.1
+	docker run -it --privileged --name $(container_name)  dg/funceq:0.1 /bin/bash
 
 
 clean: rm-container rm-image

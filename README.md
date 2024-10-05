@@ -26,6 +26,8 @@
     - [x] figure out interfaces
     - [x] simple
     - [ ] equivalence testing
-- [ ] try chef-docker
+- [x] try chef-docker
+- [ ] try 12.04 ubuntu
+  - [ ] checkout corresponding python version.
 - [ ] how to compute pass@k in humaneval
 - [ ] apply chef to humaneval
