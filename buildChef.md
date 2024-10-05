@@ -52,56 +52,17 @@ wget http://cdimage.debian.org/cdimage/archive/7.9.0-live/i386/iso-hybrid/debian
 # Extending for Python
 ```shell
 git clone https://github.com/dslab-epfl/chef-symbex-python.git
+git checkout 23eb5d4f7a91505a7abdf84a4778ef6dedc8b69a 
 ```
 ## Preparing the guest environment in KVM mode
 In python-src/Chef/build
 ```shell
-# host
-scp -r guest gendong@192.168.2.19:~
-# guest
-# install cmake from source 
-# reference: https://zhuanlan.zhihu.com/p/519732843
-wget https://cmake.org/files/v3.2/cmake-3.2.0.tar.gz
-tar -zxvf cmake-3.2.0.tar.gz
-cd cmake-3.2.0
-./configure
-make
-make install
-
-# prepare llvm packages
-tar -xf llvm-3.6.2.src.tar.xz
-tar -xf compiler-rt-3.6.2.src.tar.xz
-tar -xf cfe-3.6.2.src.tar.xz
-
-mkdir llvm.src
-cp -r llvm-3.6.2.src/* llvm.src/
-mkdir llvm.src/tools/clang
-cp -r cfe-3.6.2.src/* llvm.src/tools/clang/
-mkdir llvm.src/projects/compiler-rt/
-cp -r compiler-rt-3.6.2.src/* llvm.src/projects/compiler-rt/
-
-
-cd guest/chef/
-./build_llvm_i586.sh
-
-export PATH=$PATH:/path/to/compiled/clang+llvm
-
 # env
 apt-get install libssl-dev
 apt-get install zlib1g zlib1g-dev
 apt-get install libyaml-dev
 apt-get install libsqlite3-dev libreadline-dev libz2-dev
 
-export S2E_GUEST=/path/to/guest
-
-# guest
-# prepare packages
-# python-src/Chef/
-cp -r /home/mutu/S2E_config/packages .
-rm -rf Makefile.interp
-cp /home/mutu/S2E_config/Makefile.interp .
-rm -rf /example/requirement.txt
-cp /home/mutu/S2E_config/requirement* example/
 # python-src/Chef/build
 mkdir build
 cd build
