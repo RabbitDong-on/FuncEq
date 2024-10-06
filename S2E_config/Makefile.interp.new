@@ -33,7 +33,7 @@ PYTHONBIN_PREFIX := $(realpath .)/python-bin
 VIRTUALENV := virtualenv-1.10.1
 SIMPLEJSON := simplejson-3.3.1
 
-VIRTUALENV_PKG := Jinja2 PyYAML unicodecsv webapp2 WebOb xlrd
+VIRTUALENV_PKG := 
 # TODO: Remove this?
 #VIRTUALENV_PKG += coverage protobuf thrift
 
@@ -137,8 +137,8 @@ stamps/virtualenv-create: stamps/virtualenv-install
 #	mkdir -p stamps && touch $@
 #stamps/simplejson-install
 stamps/virtualenv-configure: stamps/virtualenv-create
-	python-env/bin/pip install -r $(PYTHONCHEF)/examples/requirement_simplejson.txt
-	python-env/bin/pip install -r $(PYTHONCHEF)/examples/requirement_other.txt --no-index --find-links=$(PYTHONCHEF)/packages
+	python-env/bin/pip install -r $(PYTHONCHEF)/symtests/requirement_simplejson.txt
+	python-env/bin/pip install -r $(PYTHONCHEF)/symtests/requirement_other.txt --no-index --find-links=$(PYTHONCHEF)/packages
 	#python-env/bin/pip install $(VIRTUALENV_PKG)
 	#cd $(SIMPLEJSON) && ../python-env/bin/python setup.py install
 	mkdir -p stamps && touch $@

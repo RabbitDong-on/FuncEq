@@ -1,7 +1,6 @@
 from typing import List
 import groundtruth
 import chat
-import common
 
 def check(candidate):
     assert candidate([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.3) == True
@@ -23,6 +22,7 @@ def check1(candidate):
     assert candidate([4, 3, 2, 8], []) == []
     assert candidate([6, 8, 1], [6, 8, 1]) == [1,6,8]
 
-check1(common.common)
+# check1(common.common)
+a="\x00\x00\x00\x00"
 
-print("pass")
+print(int(a))

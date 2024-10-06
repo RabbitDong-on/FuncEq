@@ -18,16 +18,18 @@
   - [x] vmware build
   - [x] rootfs 空间太小没法装包
   - [x] qemu重新装镜像,要选install选项
-- [ ] try some examples
+- [x] try some examples
   - [x] c example
     - [x] simple
     - [x] equivalence testing
-  - [ ] python example
+  - [x] python example
     - [x] figure out interfaces
     - [x] simple
-    - [ ] equivalence testing
+    - [x] equivalence testing
 - [x] try chef-docker
-- [ ] try 12.04 ubuntu
-  - [ ] checkout corresponding python version.
+- [x] try 12.04 ubuntu
+  - [x] do not support KVM
+- [x] checkout corresponding python version. (14.04)
+- [ ] try to translate int value
 - [ ] how to compute pass@k in humaneval
 - [ ] apply chef to humaneval

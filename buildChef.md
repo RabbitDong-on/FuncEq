@@ -68,6 +68,8 @@ mkdir build
 cd build
 make -f ../Makefile.interp
 # pip -r --no-index --find-links 从本地下载
+source python-env/bin/activate
+cd ../pychef && pip install -e .
 ```
 ## Preparing the symbolic environment in Prep mode
 Activate the Python environment:

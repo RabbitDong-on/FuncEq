@@ -28,18 +28,6 @@ class SimpleTest(light.SymbolicTest):
 class SimpleTest_Alternative(light.SymbolicTest):
     def setUp(self):
         pass
-    
-    def func1(self, input):
-        if i<50:
-            return 1
-        else:
-            return 0
-    
-    def func2(self,input):
-        if i<45:
-            return 1
-        else:
-            return 0
 
     def runTest(self):
         i=self.getInt("value",100,max_value=100,min_value=0)
