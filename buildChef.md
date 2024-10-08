@@ -58,6 +58,7 @@ git checkout 23eb5d4f7a91505a7abdf84a4778ef6dedc8b69a
 In python-src/Chef/build
 ```shell
 # env
+apt-get install wget build-essential
 apt-get install libssl-dev
 apt-get install zlib1g zlib1g-dev
 apt-get install libyaml-dev

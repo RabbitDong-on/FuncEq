@@ -30,6 +30,8 @@
 - [x] try 12.04 ubuntu
   - [x] do not support KVM
 - [x] checkout corresponding python version. (14.04)
-- [ ] try to translate int value
+- [x] tidy s2e-chef (14.04 兼容)
+- [ ] read chef python code
+  - [ ] try to translate int value
 - [ ] how to compute pass@k in humaneval
 - [ ] apply chef to humaneval
