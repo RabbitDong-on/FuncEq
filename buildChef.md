@@ -75,6 +75,7 @@ cd ../pychef && pip install -e .
 ## Preparing the symbolic environment in Prep mode
 Activate the Python environment:
 ```shell
+./run_qemu.py prep
 source python-src/Chef/build/python-env/bin/activate
 ```
 Enable symbolic execution mode:
@@ -84,5 +85,6 @@ export PYTHONSYMBEX=1
 ## Symbolic execution in SYM mode
 Run the target symbolic test case.
 ```shell
+./run_qemu.py sym -f ./config/cupa-prio.lua
 python asplos_tests.py ArgparseTest
 ```

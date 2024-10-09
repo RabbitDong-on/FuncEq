@@ -25,28 +25,3 @@ class SimpleTest(light.SymbolicTest):
         else:
             print("diff")
 
-class SimpleTest_Alternative(light.SymbolicTest):
-    def setUp(self):
-        pass
-
-    def runTest(self):
-        i=self.getInt("value",100,max_value=100,min_value=0)
-        res1=50
-        res2=50
-        
-        if i<50:
-            res1=1
-        else:
-            res1=0
-        
-        if i<45:
-            res2=1
-        else:
-            res2=0
-        
-        res=(res1==res2)
-
-        if res:
-            print("same")
-        else:
-            print("diff")

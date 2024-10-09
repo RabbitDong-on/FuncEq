@@ -31,7 +31,12 @@
   - [x] do not support KVM
 - [x] checkout corresponding python version. (14.04)
 - [x] tidy s2e-chef (14.04 兼容)
-- [ ] read chef python code
-  - [ ] try to translate int value
-- [ ] how to compute pass@k in humaneval
-- [ ] apply chef to humaneval
+- [x] how to compute pass@k in humaneval
+  - [x] Calculates 1 - comb(n - c, k) / comb(n, k). : 对于一个任务，生成n个sample，其中正确的个数是c，从其中选取k个，选到至少有一个正确的概率pass@k
+- [x] read chef python code
+  - [x] try to translate int value
+- [x] extending assert function
+- [ ] make chef support more python data type
+  - [ ] do not support floating point
+  - [ ] python version is old
+ - [ ] apply chef to humaneval
