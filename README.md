@@ -36,7 +36,12 @@
 - [x] read chef python code
   - [x] try to translate int value
 - [x] extending assert function
+- [ ] chef code reading
 - [ ] make chef support more python data type
-  - [ ] do not support floating point
-  - [ ] python version is old
- - [ ] apply chef to humaneval
+  - [x] do not support floating point
+  - [x] python version is old
+    - [x] 不支持类型注释
+  - [ ] port to new python version
+- [ ] apply chef to humaneval
+- [ ] 能不能找到一个key idea加速所有function equivalence的事情
+  - [ ] code similarity
