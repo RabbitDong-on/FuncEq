@@ -36,7 +36,10 @@
 - [x] read chef python code
   - [x] try to translate int value
 - [x] extending assert function
-- [ ] chef code reading
+- [x] chef code reading
+  - [x] custom instruction transmit data from tested program to s2e
+  - [x] how to define the scope of symbolic execution
+    - [x] codeselector can disable fork function in specified module.
 - [ ] make chef support more python data type
   - [x] do not support floating point
   - [x] python version is old
